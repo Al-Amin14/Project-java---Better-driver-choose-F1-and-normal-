@@ -56,9 +56,11 @@ class choosing_driver extends Driver {
 
     void finding_better_driver(Driver obj[]) {
         int max_exp =-1;
+        int exp_check=-9999;
         for (int i = 0; i < obj.length; i++) {
-            if ((obj[i].driver_experience >= max_exp) && (!obj[i].getPanalties())) {
-                max_exp = i;
+            if ((obj[i].driver_experience >= exp_check) && (!obj[i].getPanalties())) {
+                exp_check=obj[i].driver_experience;
+                max_exp = i; 
             }
         }
         if (max_exp == -1) {
